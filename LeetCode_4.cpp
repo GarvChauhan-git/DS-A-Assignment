@@ -1,6 +1,6 @@
 class Solution {
 public:
-    vector<int> intersection(vector<int>& nums1, vector<int>& nums2) {
+    vector<int> intersection( vector<int>& nums1, vector<int>& nums2) {
         int temp;
         vector<int> res ;
         int size1 = nums1.size();
