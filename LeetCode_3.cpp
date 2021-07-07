@@ -1,6 +1,6 @@
 class Solution {
 public:
-     vector<int> shuffle(vector<int>&nums, int n) {
+     vector<int> shuffle( vector<int>&nums, int n) {
          
         vector<int> arr ;
         int j=0;
