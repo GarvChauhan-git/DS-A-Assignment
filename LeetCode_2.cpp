@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std ;
 
-int removeElement( vector<int>&arr, int val )
+int removeElement( vector<int>&arr, int val)
 {
     int k=0,i=0;
     int n = arr.size();
