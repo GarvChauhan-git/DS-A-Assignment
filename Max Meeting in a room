@@ -1,0 +1,29 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+struct Meeting{
+   int start;
+   int end;
+   int pos;
+}meeting;
+
+bool comparator(meeting m1 , meeting m2)
+{
+  if(m1.end <m2.end)return true;
+  else-if(m1.end> m2.end)return false;
+  else-if(m1.pos <m2.pos)return true;
+  return false;
+}
+void maxMeeting(int s[], int e[] , int n)
+{
+   meeting meet[n];
+   for(int i=0;i<n;i++)
+   {
+      meet.start = s[i];
+      meet.end = e[i];
+      meet.pos[i+1];
+   }
+   sort (meet, meet+n, comparator);
+
+
+}
