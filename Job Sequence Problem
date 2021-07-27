@@ -1,0 +1,34 @@
+bool comparator(job a , job b)
+{
+  if(a.profit > b.profit)
+    return true;
+}
+
+pair<int, int> jobscheduled(job arr[] , int n)
+{
+   sort(arr ,arr+n , comparator);
+   int maxjob = arr[0].dead
+   for(int i=1;i<n;i++){
+       maxjob = max(maxjob , arr[i].dead);
+   }
+    
+   int  slot[maxjob];
+   for(int i=0;i<maxjob;i++)
+   {
+     slot[i]=-1;
+   }
+   int jobsdone=0 , jobsprofit =0;
+   for(int i=0;i<n;i++)
+   {
+     for(int j=arr[i].dead;j>0;j--)
+     {
+        if(slot[j]==-1){
+          slot[j]=i;
+          jobsdone++;;
+          jobsprofit+=arr[i].profit;
+          break;
+          }
+     }
+   }
+   return make_pair<jobsdone , jobsprofit>;
+}
