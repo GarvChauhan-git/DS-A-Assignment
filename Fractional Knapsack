@@ -1,23 +1,39 @@
 struct vpw{
   int val;
   int wei;
-  int valueperweight;
+  double valueperweight;
   };
 bool comparator(vpw a, vpw b)
 {
    if(a.valueperweight > b.valueperweight)
-   return;
+      return true;
 }
-maxvalue(int weight[] ,int value[], int w, int n)
+double maxvalue(int weight[] ,int value[], int w, int n)
 {
    vpw arr[n];
    for(int i=0;i<n;i++)
    {
       arr[i].val = value[i];
       arr[i].wei = weight[i];
-      arr[i].valueperweight = value[i]/weight[i];
+      arr[i].valueperweight = (double)value[i]/(double)weight[i];
    }
    
-   sort(arr ,arr+n, comparator); 
-
+   sort(arr ,arr+n, comparator);
+   int currweight =0;
+   double finalvalue =0;
+   for(int i=0;i<n;i++)
+   {
+     if(arr[i]+currweight <= w)
+     {
+       currweight+= arr[i].wei;
+       finalvalue+= arr[i].val; 
+     }
+     else
+     {
+       int remain = w - currweight;
+       finalvalue+= arr[i].valueperweight*rem;
+       break;
+     }
+   }
+   return finalvalue;
 }
