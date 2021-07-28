@@ -1,0 +1,23 @@
+struct vpw{
+  int val;
+  int wei;
+  int valueperweight;
+  };
+bool comparator(vpw a, vpw b)
+{
+   if(a.valueperweight > b.valueperweight)
+   return;
+}
+maxvalue(int weight[] ,int value[], int w, int n)
+{
+   vpw arr[n];
+   for(int i=0;i<n;i++)
+   {
+      arr[i].val = value[i];
+      arr[i].wei = weight[i];
+      arr[i].valueperweight = value[i]/weight[i];
+   }
+   
+   sort(arr ,arr+n, comparator); 
+
+}
