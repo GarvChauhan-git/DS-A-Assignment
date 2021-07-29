@@ -1,0 +1,29 @@
+class Solution {
+public:
+int trap(vector<int>& height)
+{
+  int len = height.size();
+  int twater =0;
+  vector<int> left;
+  vector<int> right;
+  int maxheight=0;
+  for(int i=0;i<len;i++)
+  {
+    if(maxheight < height[i])
+      maxheight = height[i];
+    left[i] = maxheight - height[i];
+  }
+  maxheight = 0;
+  for(int i=len-1;i>=0;i++)
+  {
+    if(maxheight < height[i])
+      maxheight = height[i];
+    right[i] = maxheight - height[i];
+  }
+  for(int i=0;i<len;i++)
+  {
+    twater+= min(left[i],right[i]);
+  }
+  return twater;
+
+}};
